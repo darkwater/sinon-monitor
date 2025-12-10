@@ -36,7 +36,9 @@ jobs:
     - name: Install xbuild
       run: cargo install xbuild
     - name: Build Android APK
-      run: x build --arch arm64 --platform android --release
+      run: |
+        export PATH="${{ steps.setup-ndk.outputs.ndk-path }}/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH"
+        x build --arch arm64 --platform android --release
       env:
         ANDROID_NDK_ROOT: ${{ steps.setup-ndk.outputs.ndk-path }}
         ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
