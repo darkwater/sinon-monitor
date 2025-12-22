@@ -34,4 +34,4 @@ android_logger = { version = "0.15", default-features = false }
 egui-winit     = { version = "0.33", default-features = false, features = [ "clipboard", "links" ] }
 jni            = "0.21.1"
 ndk-context    = "0.1.1"
-wgpu           = { version = "27", default-features = false, features = [ "gles" ] }
+wgpu           = { version = "28", default-features = false, features = [ "gles" ] }
